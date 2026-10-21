@@ -4,50 +4,124 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Naitik Mundra: Mechatronics Portfolio</title>
-<meta name="description" content="Mechanical engineering and mechatronics portfolio: eCVT, swarm robotics, driven pulley, and ME2110 drivetrain.">
+<meta name="description" content="Mechanical engineering and mechatronics portfolio of Naitik Mundra, Georgia Tech: eCVT, custom driven pulley, swarm robots, and ME2110 drivetrain.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 <style>
-  :root { --navy:#003057; --gold:#857437; --tint:#E6EEF6; --text:#003057; --muted:#4A5560; }
+  :root { --navy:#003057; --gold:#857437; --techgold:#B3A369; --tint:#E6EEF6; --text:#003057; --muted:#4A5560; --line:#CBD2D9; }
   * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
   body { margin:0; font-family:"JetBrains Mono", ui-monospace, Menlo, Consolas, monospace; color:var(--text); background:#fff; line-height:1.5; }
-  header { background:var(--tint); padding:32px 16px; }
-  .wrap { max-width:860px; margin:0 auto; padding:0 16px; }
+  .wrap { max-width:960px; margin:0 auto; padding:0 16px; }
+  header { background:var(--tint); padding:28px 0 20px; }
+  .head { display:flex; flex-wrap:wrap; gap:12px 32px; justify-content:space-between; align-items:flex-end; }
   h1 { margin:0 0 4px; font-size:clamp(1.6rem,5vw,2.4rem); letter-spacing:.02em; }
-  .sub { margin:0; color:var(--muted); font-weight:700; font-size:.85rem; letter-spacing:.06em; }
-  main { padding:32px 0 48px; }
-  p.lead { font-size:1.05rem; max-width:62ch; }
-  .actions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0; }
-  a.btn { display:inline-block; padding:12px 20px; border:2px solid var(--navy); color:var(--navy); text-decoration:none; font-weight:700; font-size:.95rem; }
+  .sub { margin:0; color:var(--muted); font-weight:700; font-size:.8rem; letter-spacing:.06em; }
+  .contact { font-size:.8rem; font-weight:700; border-left:1px solid var(--muted); padding-left:16px; }
+  .contact a { color:var(--navy); text-decoration:none; display:block; }
+  .contact a:hover { text-decoration:underline; }
+  nav { position:sticky; top:0; z-index:5; background:#fff; border-bottom:1px solid var(--line); }
+  nav ul { list-style:none; margin:0; padding:10px 0; display:flex; flex-wrap:wrap; gap:6px 20px; font-size:.85rem; font-weight:700; }
+  nav a { color:var(--navy); text-decoration:none; }
+  nav a:hover, nav a:focus-visible { color:var(--gold); }
+  .intro { padding:32px 0 8px; }
+  .degree { color:var(--muted); font-size:.9rem; margin:0 0 16px; }
+  .lead { font-size:clamp(1.05rem,2.6vw,1.35rem); max-width:62ch; margin:0 0 20px; }
+  .lead b { color:var(--gold); }
+  .hero img { width:100%; height:auto; display:block; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 8px; }
+  a.btn { display:inline-block; padding:12px 20px; border:2px solid var(--navy); color:var(--navy); text-decoration:none; font-weight:700; font-size:.9rem; }
   a.btn.primary { background:var(--navy); color:#fff; }
-  a.btn:hover, a.btn:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
-  object { width:100%; height:80vh; min-height:480px; border:1px solid #CBD2D9; }
-  .fallback { padding:16px; }
-  footer { border-top:1px solid #CBD2D9; padding:20px 0; font-size:.85rem; color:var(--muted); }
-  footer a { color:var(--navy); }
+  a.btn:hover, a.btn:focus-visible { outline:3px solid var(--techgold); outline-offset:2px; }
+  .project { padding:40px 0 8px; scroll-margin-top:48px; }
+  .titlebar { background:var(--tint); margin:0 0 20px; padding:10px 14px; font-size:clamp(.95rem,2.4vw,1.15rem); text-transform:uppercase; letter-spacing:.02em; }
+  .num { color:var(--gold); margin-right:6px; }
+  .figs { display:grid; grid-template-columns:1fr 1fr; gap:20px; align-items:start; margin:0 0 24px; }
+  .figs figure.wide:only-child { grid-column:1 / -1; }
+  figure { margin:0; }
+  figure img { width:100%; height:auto; display:block; border:1px solid var(--line); background:#fff; }
+  figure a:focus-visible img { outline:3px solid var(--techgold); outline-offset:2px; }
+  figcaption { font-size:.75rem; font-style:italic; color:var(--muted); margin-top:6px; }
+  .cols3 { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin:0 0 28px; }
+  .cols2 { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin:0 0 8px; }
+  .block h3 { margin:0 0 6px; font-size:1rem; }
+  .block ul { margin:0; padding-left:1.1em; font-size:.88rem; }
+  .block li { margin:0 0 6px; }
+  .cols3 .block:last-child li::marker { color:var(--gold); }
+  .closing { background:var(--navy); color:#fff; margin-top:48px; padding:48px 0; }
+  .closing h2 { margin:0 0 8px; font-size:clamp(1.4rem,4vw,2rem); }
+  .closing .who { color:var(--techgold); margin:0 0 16px; font-size:1.1rem; }
+  .closing a { color:#fff; }
+  .closing p { margin:4px 0; font-size:.9rem; }
+  @media (max-width:720px) {
+    .figs, .cols3, .cols2 { grid-template-columns:1fr !important; }
+    .contact { border-left:none; padding-left:0; }
+  }
 </style>
 </head>
 <body>
 <header>
-  <div class="wrap">
-    <h1>NAITIK MUNDRA</h1>
-    <p class="sub">MECHATRONICS PORTFOLIO | GEORGIA TECH</p>
+  <div class="wrap head">
+    <div>
+      <h1>NAITIK MUNDRA</h1>
+      <p class="sub">MECHATRONICS PORTFOLIO | GEORGIA TECH</p>
+    </div>
+    <div class="contact">
+      <a href="mailto:nmundra3@gatech.edu">nmundra3@gatech.edu</a>
+      <a href="https://linkedin.com/in/mundranaitik">linkedin.com/in/mundranaitik</a>
+      <a href="https://github.com/coder3112">github.com/coder3112</a>
+    </div>
   </div>
 </header>
+<nav aria-label="Projects"><div class="wrap"><ul><li><a href="#ecvt">eCVT</a></li><li><a href="#pulley">Driven Pulley</a></li><li><a href="#swarm">Swarm Robots</a></li><li><a href="#me2110">ME2110 Drivetrain</a></li><li><a href="Naitik_Mundra_Portfolio.pdf">PDF</a></li></ul></div></nav>
 <main class="wrap">
-  <p class="lead">I design in CAD, verify in FEA, then prototype and machine it myself. I wire and calibrate the sensors and tune the controls.</p>
-  <div class="actions">
-    <a class="btn primary" href="Naitik_Mundra_Portfolio.pdf">Open portfolio (PDF)</a>
-    <a class="btn" href="Naitik_Mundra_Portfolio.pdf" download>Download</a>
-  </div>
-  <object data="Naitik_Mundra_Portfolio.pdf#view=FitH" type="application/pdf" aria-label="Portfolio PDF preview">
-    <p class="fallback">Your browser can't preview the PDF here. Use the buttons above to open or download it.</p>
-  </object>
+  <section class="intro">
+    <p class="degree">B.S. Mechanical Engineering + B.S. Physics | Georgia Institute of Technology, GPA 4.0</p>
+    <p class="lead">I <b>design in CAD</b>, <b>verify in FEA</b>, then prototype and <b>machine it myself</b>. I <b>wire and calibrate the sensors</b> and <b>tune the controls</b>.</p>
+    <div class="hero"><img src="img/hero.jpg" width="1600" height="739" alt="The eCVT on the dynamometer, and the swarm robots under red light during a trial"></div>
+    <div class="actions">
+      <a class="btn primary" href="#ecvt">See the projects</a>
+      <a class="btn" href="Naitik_Mundra_Portfolio.pdf" download>Download PDF</a>
+    </div>
+  </section>
+  
+<section class="project" id="ecvt" aria-labelledby="ecvt-t">
+  <h2 class="titlebar" id="ecvt-t"><span class="num">01</span> eCVT: Electronic Continuously Variable Transmission</h2>
+  <div class="figs" style="grid-template-columns:1.538fr 1.967fr"><figure class=""><a href="img/ecvt-cad.jpg"><img src="img/ecvt-cad.jpg" width="969" height="630" loading="lazy" alt="Section view CAD of the eCVT assembly"></a><figcaption>eCVT assembly, SolidWorks (*Not my CAD)</figcaption></figure><figure class="wide"><a href="img/ecvt-dyno-car.jpg"><img src="img/ecvt-dyno-car.jpg" width="1257" height="639" loading="lazy" alt="eCVT on the dynamometer and installed in the Baja car, with the perfboard control prototype"></a><figcaption>eCVT mounted on dyno (left) and car (right)</figcaption></figure></div>
+  <div class="cols3"><div class="block"><h3>What?</h3><ul><li>Electronic CVT for the Baja SAE car that shifts 2x faster, led as Project Lead</li><li>Teensy 4.1 control, tested from gain-only through PID strategies.</li></ul></div><div class="block"><h3>How?</h3><ul><li>Built the dyno fixture and safety shielding, then wired the prototype on perfboard.</li><li>Integrating 4 sensors, reading at over 20K/s</li><li>4-layer Altium PCBs</li></ul></div><div class="block"><h3>Results</h3><ul><li>2x faster shifting, verified on the dyno.</li><li>Rotational inertia reduced 62% over mechanical CVT</li><li>EMI in the readings cut by over 80%.</li></ul></div></div>
+  <div class="figs" style="grid-template-columns:1.958fr 1.862fr"><figure class=""><a href="img/ecvt-pcb.jpg"><img src="img/ecvt-pcb.jpg" width="975" height="498" loading="lazy" alt="Altium schematic of the eCVT control PCB"></a><figcaption>Altium PCB Schematic</figcaption></figure><figure class=""><a href="img/ecvt-plot.jpg"><img src="img/ecvt-plot.jpg" width="972" height="522" loading="lazy" alt="Plot of sheave axial position and engine RPM over time during a dyno run"></a><figcaption>Dyno run: sheave position and engine RPM</figcaption></figure></div>
+  <div class="cols2"><div class="block"><h3>Other work:</h3><ul><li>Debugged EMI and introduced shielded wire</li><li>Presented PDR and CDR</li><li>Wrote 5+ test plans</li></ul></div><div class="block"><h3>Control strategies tried:</h3><ul><li>Basic gain control</li><li>PID on the Teensy 4.1</li></ul></div></div>
+</section>
+<section class="project" id="pulley" aria-labelledby="pulley-t">
+  <h2 class="titlebar" id="pulley-t"><span class="num">02</span> Custom Secondary Driven Pulley (~10% Less Mass)</h2>
+  <div class="figs" style="grid-template-columns:1.674fr 1.308fr"><figure class=""><a href="img/pulley-cad.jpg"><img src="img/pulley-cad.jpg" width="1140" height="681" loading="lazy" alt="Section view CAD of the driven pulley"></a><figcaption>CAD of CVT Driven (Secondary) Pulley</figcaption></figure><figure class=""><a href="img/pulley-fea.jpg"><img src="img/pulley-fea.jpg" width="891" height="681" loading="lazy" alt="Ansys FEA stress plot of the driven pulley sheave"></a><figcaption>Optimized in Ansys</figcaption></figure></div>
+  <div class="cols3"><div class="block"><h3>What?</h3><ul><li>Lighter driven pulley for the eCVT</li><li>Cutouts in sheave face remove mass</li></ul></div><div class="block"><h3>How?</h3><ul><li>Teardown of COTS part; root cause analysis</li><li>Hand calcs (Shigley&#x27;s)</li><li>Ansys FEA</li></ul></div><div class="block"><h3>Results</h3><ul><li>10% less mass</li><li>12% less rotational inertia</li></ul></div></div>
+  <div class="figs" style="grid-template-columns:1.134fr 1.103fr"><figure class=""><a href="img/pulley-loads.jpg"><img src="img/pulley-loads.jpg" width="810" height="714" loading="lazy" alt="Driven pulley CAD with applied load cases marked"></a><figcaption>Load Cases Derived From Shigley</figcaption></figure><figure class=""><a href="img/pulley-gaged.jpg"><img src="img/pulley-gaged.jpg" width="1152" height="1044" loading="lazy" alt="Physical driven pulley on the bench after modification"></a><figcaption>Gaged CVT that was modified after teardown</figcaption></figure></div>
+  <div class="cols2"><div class="block"><h3>Other work:</h3><ul><li>Analysis of competition footage to understand back shifting and tuning concerns</li></ul></div></div>
+</section>
+<section class="project" id="swarm" aria-labelledby="swarm-t">
+  <h2 class="titlebar" id="swarm-t"><span class="num">03</span> Swarm Robots: Active Matter Research (CRAB Lab)</h2>
+  <div class="figs" style="grid-template-columns:2.102fr 0.985fr"><figure class="wide"><a href="img/swarm-run.jpg"><img src="img/swarm-run.jpg" width="1362" height="648" loading="lazy" alt="Ten swarm robots under red light during a trial, and the belt station"></a><figcaption>Left: Swarm of 10 Robots during Run; Right: Belt Station</figcaption></figure><figure class=""><a href="img/swarm-clutch.jpg"><img src="img/swarm-clutch.jpg" width="609" height="618" loading="lazy" alt="Robot with the slip clutch housing around its servo"></a><figcaption>Slip clutch protecting servos</figcaption></figure></div>
+  <div class="cols3"><div class="block"><h3>What?</h3><ul><li>10 swarm robots built in one month for active matter trials: soldered, machined and programmed each.</li><li>RL for physical AI, optimal control of compliant multi-agent robots.</li></ul></div><div class="block"><h3>How?</h3><ul><li>Designed a 2 mm slip clutch to protect 20 DC servo motors.</li><li>Measured belt tension from calibrated motor PID torque instead of strain gauges.</li><li>Designed 6 gear belt spooling mechanism</li></ul></div><div class="block"><h3>Results</h3><ul><li>Stall incidents down 85%.</li><li>Belt spooling: 90% less slip, 35% less mass.</li><li>50+ pose-tracked trials (40+ video hours), &gt;95% accuracy</li><li>250+ simulator runs.</li></ul></div></div>
+  <div class="figs" style="grid-template-columns:1.515fr 2.264fr"><figure class=""><a href="img/swarm-cv.jpg"><img src="img/swarm-cv.jpg" width="750" height="495" loading="lazy" alt="Overhead camera frame with each robot detected and labeled by ID"></a><figcaption>Computer Vision Tracking</figcaption></figure><figure class="wide"><a href="img/swarm-door.jpg"><img src="img/swarm-door.jpg" width="1005" height="444" loading="lazy" alt="Spring-loaded door test rig hardware"></a><figcaption>Door test rig for swarm manipulation</figcaption></figure></div>
+  <div class="cols2"><div class="block"><h3>Tools built:</h3><ul><li>Python/OpenCV pose tracking, calibrated to physical units</li><li>C++/MATLAB simulator with implicit integration</li></ul></div><div class="block"><h3>Test rigs:</h3><ul><li>Spring-loaded doors that open under adjustable finite push and close on release</li><li>Belt tension measurement from motor torque</li></ul></div></div>
+</section>
+<section class="project" id="me2110" aria-labelledby="me2110-t">
+  <h2 class="titlebar" id="me2110-t"><span class="num">04</span> ME2110 Drivetrain for Autonomous Robot</h2>
+  <div class="figs" style="grid-template-columns:1.606fr 3.645fr"><figure class=""><a href="img/me2110-iso.jpg"><img src="img/me2110-iso.jpg" width="612" height="381" loading="lazy" alt="Isometric CAD of the drivetrain: wheel, motor, gear and axle under the base"></a><figcaption>Isometric View: Assembly</figcaption></figure><figure class="wide"><a href="img/me2110-section.jpg"><img src="img/me2110-section.jpg" width="1600" height="439" loading="lazy" alt="Labeled section view: base, TPU tyre, gear, axle and wheel mount, motor, motor mount, hex shaft, PLA hubs"></a><figcaption>Section View: Assembly</figcaption></figure></div>
+  <div class="cols3"><div class="block"><h3>What?</h3><ul><li>Drivetrain for the ME2110 competition</li><li>Sized from torque and rolling resistance calculations</li></ul></div><div class="block"><h3>How?</h3><ul><li>Gear sizing using torque hand calcs</li><li>Set screw locking gears to axle</li><li>Fully 3D printable wheels, hubs, and mounts</li></ul></div><div class="block"><h3>Results</h3><ul><li>Fastest robot</li><li>100% success rate</li><li>Weight &lt; 150 g</li><li>Assembly time &lt; 20 minutes</li></ul></div></div>
+  <div class="figs" style="grid-template-columns:2.252fr 1.545fr"><figure class=""><a href="img/me2110-calcs.jpg"><img src="img/me2110-calcs.jpg" width="1020" height="453" loading="lazy" alt="Spreadsheet of drivetrain constants and required torque calculation"></a><figcaption>Excel Hand Calcs</figcaption></figure><figure class=""><a href="img/me2110-proto.jpg"><img src="img/me2110-proto.jpg" width="1205" height="780" loading="lazy" alt="Photo of the assembled prototype robot"></a><figcaption>Prototype Robot Built in &lt;18 Hours</figcaption></figure></div>
+  <div class="cols2"><div class="block"><h3>Documentation:</h3><ul><li>HOQ: 10 customer requirements to 60 engineering requirements</li><li>Engineering drawings</li></ul></div></div>
+</section>
 </main>
-<footer>
+<section class="closing" id="contact">
   <div class="wrap">
-    <a href="mailto:nmundra3@gatech.edu">nmundra3@gatech.edu</a> |
-    <a href="https://linkedin.com/in/mundranaitik">linkedin.com/in/mundranaitik</a> |
-    <a href="https://github.com/coder3112">github.com/coder3112</a>
+    <h2>Let's build something.</h2>
+    <p class="who">Naitik Mundra</p>
+    <p><a href="mailto:nmundra3@gatech.edu">nmundra3@gatech.edu</a> | (470) 265-1221</p>
+    <p><a href="https://linkedin.com/in/mundranaitik">linkedin.com/in/mundranaitik</a> | <a href="https://github.com/coder3112">github.com/coder3112</a></p>
   </div>
-</footer>
+</section>
 </body>
 </html>
